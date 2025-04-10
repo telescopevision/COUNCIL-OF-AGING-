@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Council of Aging - Exclusive HVAC Offers</title>
+    <style>
+        :root {
+            --primary: #1E88E5;
+            --secondary: #F0F7FF;
+            --accent: #FF6D00;
+            --text: #333333;
+            --light-text: #666666;
+            --border: #DDDDDD;
+            --gradient-start: #1976D2;
+            --gradient-end: #42A5F5;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #FFFFFF;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            padding: 25px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(30,136,229,0.3);
+        }
+        
+        .company-name {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--text);
+            position: relative;
+        }
+        
+        .company-name::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .contact-info {
+            text-align: right;
+            font-size: 18px;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        .contact-info strong {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 50% 50% / 15%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .headline {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .subheadline {
+            font-size: 24px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Offers Section */
+        .offers {
+            padding: 60px 0;
+        }
+        
+        .offer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .offer-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        
+        .offer-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: var(--secondary);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .offer-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 38px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--accent);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--light-text);
+            font-size: 22px;
+            position: relative;
+            margin-left: 10px;
+        }
+        
+        .price::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            opacity: 0.3;
+        }
+        
+        .offer-details {
+            margin: 20px 0;
+        }
+        
+        .system-pricing {
+            background: linear-gradient(to bottom, var(--secondary), white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .system-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+            transition: all 0.2s ease;
+        }
+        
+        .system-row:hover {
+            background-color: rgba(255,255,255,0.6);
+            transform: translateX(5px);
+        }
+        
+        .system-row:last-child {
+            border-bottom: none;
+        }
+        
+        /* Features Section */
+        .features {
+            background: linear-gradient(to bottom, white, var(--secondary));
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E88E5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .features-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .features-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--secondary);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(30,136,229,0.2);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: "❝";
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 150px;
+            color: var(--primary);
+            opacity: 0.05;
+            font-family: serif;
+            z-index: 0;
+        }
+        
+        .testimonials-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 32px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .testimonials-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 22px;
+            line-height: 1.8;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p strong {
+            font-size: 28px;
+            display: block;
+            margin-top: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #E58D3D;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, #333333, #222222);
+            color: white;
+            padding: 60px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .footer-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .council-note {
+            font-style: italic;
+            color: #AAAAAA;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .headline {
+                font-size: 28px;
+            }
+            
+            .subheadline {
+                font-size: 18px;
+            }
+            
+            .offer-card {
+                min-width: 100%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">ICE</div>
+                <div class="company-name">I.C.E. COOLING & A COOL BREEZE</div>
+            </div>
+            <div class="contact-info">
+                <p><strong>Call Us:</strong> 407-729-9545</p>
+                <p><strong>Visit:</strong> www.icecoolingorlando.com</p>
+                <p><strong>Email:</strong> customerservice@icecoolingorlando.com</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="headline">Exclusive HVAC Pricing for Council of Aging Members</h1>
+            <h2 class="subheadline">Comfort, Safety, and Savings — Just for You</h2>
+        </div>
+    </section>
+    
+    <!-- Offers Section -->
+    <section class="offers">
+        <div class="container">
+            <div class="offer-container">
+                <div class="offer-card">
+                    <div class="offer-icon">🔧</div>
+                    <h3 class="offer-title">Professional HVAC Tune-Up</h3>
+                    <div class="price">$29.95 <span class="original-price">$99.95</span></div>
+                    <p>Keep your system running efficiently and prevent costly breakdowns.</p>
+                    <div class="offer-details">
+                        <p><strong>✓ Complete System Inspection</strong></p>
+                        <p><strong>✓ Filter Check & Replacement Guidance</strong></p>
+                        <p><strong>✓ Thermostat Testing</strong></p>
+                        <p><strong>✓ FREE Drain Flush</strong> ($45 value!)</p>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-icon">❄️</div>
+                    <h3 class="offer-title">System Replacement Special</h3>
+                    <p>All Heat Pump, SEER2 Rated Systems</p>
+                    <div class="system-pricing">
+                        <div class="system-row">
+                            <span><strong>2.0 Ton System</strong></span>
+                            <span class="price" style="font-size: 24px;">$4,372</span>
+                        </div>
+                        <div class="system-row">
+                            <span><strong>3.0 Ton System</strong></span>
+                            <span class="price" style="font-size: 24px;">$4,708</span>
+                        </div>
+                        <div class="system-row">
+                            <span><strong>4.0 Ton System</strong></span>
+                            <span class="price" style="font-size: 24px;">$5,532</span>
+                        </div>
+                        <div class="system-row">
+                            <span><strong>5.0 Ton System</strong></span>
+                            <span class="price" style="font-size: 24px;">$6,030</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="features-title">All System Replacements Include:</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Thermostat</h3>
+                    <p>Modern, programmable thermostat included</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💧</div>
+                    <h3>Drain Safety</h3>
+                    <p>Prevent water damage with proper drainage</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌪️</div>
+                    <h3>Hurricane Anchors</h3>
+                    <p>Weather-resistant installation for Florida homes</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👷</div>
+                    <h3>Professional Installation</h3>
+                    <p>By licensed, experienced technicians</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📜</div>
+                    <h3>Warranties</h3>
+                    <p>Manufacturer and labor warranties included</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>1-Year Maintenance</h3>
+                    <p>Ensuring your system runs perfectly</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p><strong>Please Note:</strong> Permits, ductwork, and major modifications are not included in the pricing above.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="testimonials-title">What Our Customers Say</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I was worried about replacing my old AC system, but the team at I.C.E. Cooling made it so easy. They explained everything clearly and the price was exactly as quoted - no surprises. My new system is working beautifully!"</p>
+                <p class="testimonial-author">- Margaret J., Orlando</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The tune-up service was excellent! The technician arrived on time, was very respectful of my home, and took the time to answer all my questions. My system is running so much better now, and my energy bill has decreased!"</p>
+                <p class="testimonial-author">- Robert T., Winter Park</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As a Council of Aging member, I appreciate the special pricing and the extra care they took to make sure I understood my options. The installation team was professional and cleaned up everything when they finished. Highly recommend!"</p>
+                <p class="testimonial-author">- Elizabeth M., Kissimmee</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">We're ready to go! Don't miss these exclusive Council of Aging offers.</h2>
+            <p>Our team of friendly professionals is standing by to help you stay comfortable year-round.</p>
+            <p style="margin-top: 20px"><strong>Call us today: 407-729-9545</strong></p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Phone: 407-729-9545</p>
+                    <p>Website: www.icecoolingorlando.com</p>
+                    <p>Email: customerservice@icecoolingorlando.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Service Areas</h3>
+                    <p>Orlando • Winter Park • Kissimmee</p>
+                    <p>Altamonte Springs • Lake Mary</p>
+                    <p>Winter Garden • Apopka</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="council-note">Serving the Council of Aging with pride and care.</p>
+                <p>&copy; 2025 I.C.E. COOLING & A COOL BREEZE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple form validation for demonstration purposes
+        function validateForm(event) {
+            event.preventDefault();
+            alert("Thank you! We'll be in touch shortly.");
+            return false;
+        }
+    </script>
+</body>
+</html>
